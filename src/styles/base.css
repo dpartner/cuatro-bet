@@ -12,7 +12,7 @@ body {
 
 body {
   min-width: 320px;
-  font-family: var(--font-family);
+  font-family: var(--font-family-base);
   color: var(--color-text);
   background: radial-gradient(circle at 0% 0%, #1f2553 0%, var(--color-bg) 45%);
   -webkit-font-smoothing: antialiased;

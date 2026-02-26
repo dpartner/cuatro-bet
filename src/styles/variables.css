@@ -1,5 +1,6 @@
 :root {
-  --font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-base: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-display: "Zalando Sans Expanded", "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   --color-bg: #0a0d22;
   --color-surface: #171b36;
