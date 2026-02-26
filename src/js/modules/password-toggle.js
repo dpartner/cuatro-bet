@@ -10,6 +10,7 @@ export function initPasswordToggle() {
     const isPassword = passwordInput.type === 'password';
 
     passwordInput.type = isPassword ? 'text' : 'password';
-    toggle.setAttribute('aria-label', isPassword ? 'Сховати пароль' : 'Показати пароль');
+    toggle.style.opacity = isPassword ? 1 : 0.5;
+    toggle.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
   });
 }
