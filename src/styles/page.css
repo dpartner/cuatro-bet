@@ -228,7 +228,7 @@
 .field {
   display: flex;
   margin-bottom: var(--space-xs);
-  padding: 15px var(--space-md) 15px 40px;
+  padding: 15px var(--space-md) 15px 44px;
   border-radius: var(--radius-sm);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.07));
   border-width: 1px;
@@ -282,7 +282,7 @@
   color: var(--color-text-muted);
   position: absolute;
   top: 50%;
-  left: 48px;
+  left: 44px;
   transform: translateY(-50%);
   pointer-events: none;
   opacity: 0;
