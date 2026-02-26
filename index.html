@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuatrobet - Реєстрація</title>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero" aria-label="Пропозиція bienvenida">
+        <header class="hero__header">
+          <a class="brand" href="#" aria-label="Cuatrobet">
+            <span class="brand__mark">C</span>
+            <span class="brand__text">CUATRO<span>BET</span></span>
+          </a>
+          <a class="hero__signin" href="#">INICIAR SESION</a>
+        </header>
+
+        <div class="hero__content">
+          <p class="hero__kicker">BONO</p>
+          <h1 class="hero__title">DE BIENVENIDA</h1>
+        </div>
+
+        <div class="hero__decor" aria-hidden="true">
+          <span class="coin coin--1"></span>
+          <span class="coin coin--2"></span>
+          <span class="gift gift--1"></span>
+          <span class="gift gift--2"></span>
+        </div>
+      </section>
+
+      <section class="form-panel" aria-label="Форма реєстрації">
+        <h2 class="form-panel__title">OBTENER BONIFICACION</h2>
+
+        <a class="bonus-card" href="#" aria-label="Бонусна пропозиція">
+          <div class="bonus-card__icon"></div>
+          <div class="bonus-card__body">
+            <p class="bonus-card__top">
+              <span class="bonus-card__badge">Bono</span>
+              de Bienvenida para Slotsde Casino
+            </p>
+            <p class="bonus-card__text">
+              Bono de Slots de hasta el <strong>150%</strong><br />
+              <strong>+ 60 FS</strong> con tu primer depósito
+            </p>
+          </div>
+          <span class="bonus-card__arrow" aria-hidden="true">›</span>
+        </a>
+
+        <form class="register-form" id="register-form" novalidate>
+          <div class="register-form__grid">
+            <label class="field">
+              <span class="field__icon">◉</span>
+              <input type="text" name="firstName" placeholder="First Name" required />
+            </label>
+
+            <label class="field">
+              <span class="field__icon">◉</span>
+              <input type="text" name="lastName" placeholder="Last Name" required />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__icon">@</span>
+            <input type="email" name="email" placeholder="Correo electrónico" required />
+          </label>
+
+          <label class="field field--phone">
+            <span class="field__prefix">
+              <select name="countryCode" id="country-code" aria-label="Код країни"></select>
+            </span>
+            <input type="tel" name="phone" placeholder="Número de teléfono" required />
+          </label>
+
+          <label class="field field--password">
+            <span class="field__icon">#</span>
+            <input type="password" name="password" placeholder="Contraseña" required minlength="8" />
+            <button class="field__toggle" type="button" aria-label="Показати пароль">
+              <span class="field__eye">◉</span>
+            </button>
+          </label>
+
+          <label class="check">
+            <input type="checkbox" name="isAdult" id="isAdult" required />
+            <span class="check__box" aria-hidden="true"></span>
+            <span class="check__text">
+              Soy mayor de <strong>18</strong> años y acepto
+              <a href="#">los términos del contrato de oferta</a>
+            </span>
+          </label>
+
+          <button class="register-form__submit" type="submit">REGISTER</button>
+          <p class="register-form__signin">
+            ¿Ya tenés una cuenta?
+            <a href="#">Iniciar sesión</a>
+          </p>
+          <p class="register-form__message" id="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

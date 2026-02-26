@@ -1,0 +1,40 @@
+:root {
+  --font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --color-bg: #0a0d22;
+  --color-surface: #171b36;
+  --color-surface-soft: #1f2447;
+  --color-hero: #0b1130;
+  --color-text: #f3f5ff;
+  --color-text-muted: #aab1d3;
+  --color-primary: #ff6200;
+  --color-primary-soft: #ff7d26;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-focus: #ffb784;
+  --color-success: #29c772;
+  --color-danger: #ff6565;
+
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.25rem;
+  --space-xl: 1.5rem;
+  --space-2xl: 2rem;
+
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.3);
+
+  --hero-height-mobile: 20rem;
+  --hero-height-tablet: 23rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --hero-height-mobile: var(--hero-height-tablet);
+  }
+}
