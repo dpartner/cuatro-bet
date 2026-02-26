@@ -227,14 +227,25 @@
 
 .field {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--space-xs);
   margin-bottom: var(--space-xs);
-  padding: 15px var(--space-md);
+  padding: 15px var(--space-md) 15px 40px;
   border-radius: var(--radius-sm);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.07));
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  transition: border-color 0.2s ease;
+  outline: 0;
+  outline-offset: 0;
+  outline-style: none;
+  outline-width: 0;
+  position: relative;
 }
+
+.field:focus-within, .field:focus, .field:hover {
+  border-color: var(--color-primary);
+}
+
 .field.field--password {
   margin-bottom: var(--space-sm);
 } 
@@ -244,12 +255,43 @@
   border: 0;
   outline: 0;
   background: transparent;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
+  position: relative;
+  transition: transform 0.2s ease;
 }
 
 .field__icon {
-  color: #8089b8;
+  position: absolute;
+  top: 50%;
+  left: var(--space-md);
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+}
+
+.field input:not(:placeholder-shown) {
+  transform: translateY(20%);
+}
+
+.field__hidden-placeholder {
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-muted);
+  position: absolute;
+  top: 50%;
+  left: 48px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.field input:not(:placeholder-shown) + .field__hidden-placeholder {
+  opacity: 1;
+  transform: translateY(-170%);
 }
 
 .field__prefix {
@@ -274,10 +316,6 @@
 
 .field__eye {
   color: #9ea4c8;
-}
-
-.field:focus-within {
-  border-color: var(--color-focus);
 }
 
 .field--invalid {

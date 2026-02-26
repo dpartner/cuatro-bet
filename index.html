@@ -50,28 +50,34 @@
               <label class="field">
                 <img src="/images/icons/person.svg" alt="first name" class="field__icon" />
                 <input type="text" name="firstName" placeholder="First Name" required />
+                <span class="field__hidden-placeholder" aria-hidden="true">First Name</span>
+                <!-- <span class="field__error">First name is required</span> -->
               </label>
 
               <label class="field">
                 <img src="/images/icons/person.svg" alt="last name" class="field__icon" />
                 <input type="text" name="lastName" placeholder="Last Name" required />
+                <span class="field__hidden-placeholder" aria-hidden="true">Last Name</span>
               </label>
             </div>
 
             <label class="field">
               <img src="/images/icons/mail.svg" alt="email" class="field__icon" />
               <input type="email" name="email" placeholder="Correo electrónico" required />
+              <span class="field__hidden-placeholder" aria-hidden="true">Correo electrónico</span>
             </label>
 
             <label class="field field--phone">
               <img src="/images/icons/flag.png" alt="phone" class="field__icon" />
               <input type="tel" name="phone" placeholder="Número de teléfono" required />
+              <span class="field__hidden-placeholder" aria-hidden="true">Número de teléfono</span>
             </label>
 
             <label class="field field--password">
               <img src="/images/icons/psw.svg" alt="password" class="field__icon" />
               <input type="password" name="password" placeholder="Contraseña" required minlength="8" />
-              <button class="field__toggle" type="button" aria-label="Показати пароль">
+              <span class="field__hidden-placeholder" aria-hidden="true">Contraseña</span>
+              <button class="field__toggle" type="button" aria-label="Show password">
                 <img src="/images/icons/eye.svg" alt="eye" class="field__eye" />
               </button>
             </label>

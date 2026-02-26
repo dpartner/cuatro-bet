@@ -41,7 +41,7 @@ export function initFormValidation() {
 
     message.classList.toggle('register-form__message--error', !isValid);
     message.textContent = isValid
-      ? 'Реєстрація успішно пройдена (демо).'
-      : 'Перевірте поля форми та підтвердіть вік 18+.';
+      ? 'Registration successful'
+      : 'Check the form fields and confirm your age 18+';
   });
 }
