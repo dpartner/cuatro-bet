@@ -146,6 +146,7 @@ export function initBonusModal() {
   options.forEach(opt => {
     opt.addEventListener('click', () => {
       selectOption(opt.dataset.id);
+      saveAndClose();
     });
   });
 }
