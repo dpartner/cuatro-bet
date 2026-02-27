@@ -37,7 +37,9 @@ export function initBonusModal() {
             </p>
           </footer>
         </div>
-        <img src="/images/modal/modal-boxes-bg.webp" alt="Modal background" class="modal__boxes-bg" />
+        <div class="modal__boxes-bg-wrapper">
+          <img src="/images/modal/modal-boxes-bg.webp" alt="Modal background" class="modal__boxes-bg" />
+        </div>
         <div class="modal__background-wrapper">
         <img src="/images/modal/modal-bg.png" alt="Modal background" class="modal__background" />
         </div>
