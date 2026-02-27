@@ -9,32 +9,38 @@ export function initBonusModal() {
     <div class="modal" id="bonus-modal" aria-hidden="true">
       <div class="modal__backdrop"></div>
       <div class="modal__container">
-        <header class="modal__header">
-          <h2 class="modal__title">TENEMOS UNA SORPRESA PARA TI</h2>
-          <p class="modal__subtitle">Ofrecemos un bono para el primer depósito de la cuenta</p>
-          <button class="modal__close" aria-label="Close modal">✕</button>
-        </header>
-        
-        <div class="modal__list">
-          ${bonuses.map(bonus => `
-            <div class="bonus-option ${bonus.id === currentBonusId ? 'is-selected' : ''}" data-id="${bonus.id}">
-              <img src="${bonus.icon}" srcset="${bonus.icon} 1x, ${bonus.icon2x} 2x" alt="" class="bonus-option__icon">
-              <div class="bonus-option__content">
-                <p class="bonus-option__title">${bonus.title}</p>
-                <p class="bonus-option__text">${bonus.text}</p>
+        <div class="modal__content">
+          <header class="modal__header">
+            <h2 class="modal__title">TENEMOS UNA SORPRESA PARA TI</h2>
+            <p class="modal__subtitle">Ofrecemos un bono para el primer depósito de la cuenta</p>
+            <button class="modal__close" aria-label="Close modal">✕</button>
+          </header>
+          
+          <div class="modal__list">
+            ${bonuses.map(bonus => `
+              <div class="bonus-option ${bonus.id === currentBonusId ? 'is-selected' : ''}" data-id="${bonus.id}">
+                <img src="${bonus.icon}" srcset="${bonus.icon} 1x, ${bonus.icon2x} 2x" alt="" class="bonus-option__icon">
+                <div class="bonus-option__content">
+                  <p class="bonus-option__title">${bonus.title}</p>
+                  <p class="bonus-option__text">${bonus.text}</p>
+                </div>
+                <div class="bonus-option__radio"></div>
               </div>
-              <div class="bonus-option__radio"></div>
-            </div>
-          `).join('')}
-        </div>
+            `).join('')}
+          </div>
 
-        <footer class="modal__footer">
-          <button class="modal__submit">CONTINUAR</button>
-          <p class="modal__disclaimer">
-            Al elegir un bono, confirmas que has leído y aceptas la política de la 
-            <strong>Bono deportivo</strong> y de la <strong>Bono de casino</strong>
-          </p>
-        </footer>
+          <footer class="modal__footer">
+            <button class="modal__submit">CONTINUAR</button>
+            <p class="modal__disclaimer">
+              Al elegir un bono, confirmas que has leído y aceptas la política de la 
+              <strong>Bono deportivo</strong> y de la <strong>Bono de casino</strong>
+            </p>
+          </footer>
+        </div>
+        <img src="/images/modal/modal-boxes-bg.webp" alt="Modal background" class="modal__boxes-bg" />
+        <div class="modal__background-wrapper">
+        <img src="/images/modal/modal-bg.png" alt="Modal background" class="modal__background" />
+        </div>
       </div>
     </div>
   `;
