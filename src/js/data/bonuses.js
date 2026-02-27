@@ -19,7 +19,7 @@ export const bonuses = [
   },
   {
     id: 'live',
-    title: 'Bono de Casino en Vivo',
+    title: 'Bono de Bienvenida para Casino en Vivo',
     text: 'Bono de Casino en Vivo de hasta el <strong>150%</strong> con tu primer depósito',
     badge: 'Bono',
     icon: getPath('images/bono/bono_3@1x.webp'),
