@@ -355,10 +355,11 @@
   justify-content: center;
   min-width: 20px;
   margin-left: auto;
+  color: var(--color-text-muted);
 }
 
-.bonus-card__arrow-wrapper img {
-  object-fit: cover;
+.bonus-card:hover .bonus-card__arrow-wrapper {
+  color: var(--color-primary);
 }
 
 .register-form {

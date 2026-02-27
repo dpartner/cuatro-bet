@@ -182,12 +182,7 @@
 }
 
 .bonus-option:hover {
-  background: #252b50;
-}
-
-.bonus-option.is-selected {
   border-color: var(--color-primary);
-  background: rgba(255, 103, 0, 0.05);
 }
 
 .bonus-option__icon {
@@ -227,6 +222,10 @@
   display: grid;
   place-items: center;
   transition: all 0.2s ease;
+}
+
+.bonus-option:hover .bonus-option__radio {
+  border-color: var(--color-primary);
 }
 
 .bonus-option.is-selected .bonus-option__radio {
