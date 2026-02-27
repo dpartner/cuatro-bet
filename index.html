@@ -23,7 +23,12 @@
 
       <section class="form-panel" aria-label="Registration form">
         <div class="form__content">
-          <h2 class="form-panel__title">OBTENER BONIFICACION</h2>
+          <div class="form__content-header">
+            <h2 class="form-panel__title">OBTENER BONIFICACION</h2>
+            <a href="#" aria-label="hotline">
+              <img src="/images/icons/headphones.svg" alt="headphones" class="form__content-icon" />
+            </a>
+          </div>
 
           <a class="bonus-card" href="#" aria-label="Welcome bonus">
             <img 
@@ -46,28 +51,6 @@
           </a>
 
           <form class="register-form" id="register-form" novalidate>
-            <div class="register-form__grid">
-              <label class="field">
-                <img src="/images/icons/person.svg" alt="first name" class="field__icon" />
-                <input type="text" name="firstName" placeholder="First Name" required />
-                <span class="field__hidden-placeholder" aria-hidden="true">First Name</span>
-                <span class="field__error">
-                  <img src="/images/icons/error.svg" alt="error" class="field__error-icon" />
-                  First name is required
-                </span>
-              </label>
-
-              <label class="field">
-                <img src="/images/icons/person.svg" alt="last name" class="field__icon" />
-                <input type="text" name="lastName" placeholder="Last Name" required />
-                <span class="field__hidden-placeholder" aria-hidden="true">Last Name</span>
-                <span class="field__error">
-                  <img src="/images/icons/error.svg" alt="error" class="field__error-icon" />
-                  Last name is required
-                </span>
-              </label>
-            </div>
-
             <label class="field">
               <img src="/images/icons/mail.svg" alt="email" class="field__icon" />
               <input type="email" name="email" placeholder="Correo electrónico" required />

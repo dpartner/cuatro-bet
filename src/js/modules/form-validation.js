@@ -5,14 +5,12 @@ export function initFormValidation() {
     return;
   }
 
-  const firstName = form.elements.firstName;
-  const lastName = form.elements.lastName;
   const email = form.elements.email;
   const phone = form.elements.phone;
   const password = form.elements.password;
   const isAdult = form.elements.isAdult;
 
-  const fieldInputs = [firstName, lastName, email, phone, password];
+  const fieldInputs = [email, phone, password];
 
   const setErrorVisibility = (input, isValid) => {
     const field = input.closest('.field');
@@ -42,10 +40,6 @@ export function initFormValidation() {
 
   const validateInput = (input) => {
     let isValid = false;
-
-    if (input === firstName || input === lastName) {
-      isValid = Boolean(input.value.trim());
-    }
 
     if (input === email) {
       isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
