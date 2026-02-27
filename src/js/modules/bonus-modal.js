@@ -46,7 +46,7 @@ export function initBonusModal() {
         <div class="modal__background-wrapper">
         <picture>
             <source srcset="/images/modal/modal-tab-bg.png" media="(min-width: 768px) and (max-width: 1365px)">
-            <source srcset="/images/modal/modal-desk-bg.png" media="(min-width: 1366px)">
+            <source srcset="/images/form/form-desk-bg.png" media="(min-width: 1366px)">
             <img src="/images/modal/modal-mob-bg.png" alt="Modal background" class="modal__background" />
         </picture>
         </div>
