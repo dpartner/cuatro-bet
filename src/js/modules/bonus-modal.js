@@ -106,7 +106,11 @@ export function initBonusModal() {
   };
 
   // Initial Update
-  updateMainCard(currentBonusId);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => updateMainCard(currentBonusId));
+  } else {
+    updateMainCard(currentBonusId);
+  }
 
   // Listeners
   if (mainCard) {
