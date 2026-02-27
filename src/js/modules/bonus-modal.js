@@ -1,5 +1,7 @@
 import { bonuses } from '../data/bonuses.js';
 
+const getPath = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 export function initBonusModal() {
   const STORAGE_KEY = 'selected_bonus_id';
   let currentBonusId = localStorage.getItem(STORAGE_KEY) || bonuses[0].id;
@@ -39,15 +41,15 @@ export function initBonusModal() {
         </div>
         <div class="modal__boxes-bg-wrapper">
         <picture>
-            <source srcset="/images/modal/modal-boxes-tab-bg.webp" media="(min-width: 768px) and (max-width: 1365px)">
-            <img src="/images/modal/modal-boxes-mob-bg.webp" alt="Modal background" class="modal__boxes-bg" />
+            <source srcset="${getPath('images/modal/modal-boxes-tab-bg.webp')}" media="(min-width: 768px) and (max-width: 1365px)">
+            <img src="${getPath('images/modal/modal-boxes-mob-bg.webp')}" alt="Modal background" class="modal__boxes-bg" />
         </picture>
         </div>
         <div class="modal__background-wrapper">
         <picture>
-            <source srcset="/images/modal/modal-tab-bg.png" media="(min-width: 768px) and (max-width: 1365px)">
-            <source srcset="/images/form/form-desk-bg.png" media="(min-width: 1366px)">
-            <img src="/images/modal/modal-mob-bg.png" alt="Modal background" class="modal__background" />
+            <source srcset="${getPath('images/modal/modal-tab-bg.png')}" media="(min-width: 768px) and (max-width: 1365px)">
+            <source srcset="${getPath('images/form/form-desk-bg.png')}" media="(min-width: 1366px)">
+            <img src="${getPath('images/modal/modal-mob-bg.png')}" alt="Modal background" class="modal__background" />
         </picture>
         </div>
       </div>
