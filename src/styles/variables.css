@@ -13,6 +13,7 @@
   --color-focus: #ffb784;
   --color-success: #29c772;
   --color-danger: #EF4444;
+  --field-background: linear-gradient(90deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.07));
 
   --radius-xxs: 4px;
   --radius-xs: 8px;
@@ -25,11 +26,12 @@
   --space-sm: 12px;
   --space-md: 16px;
   --space-lg: 20px;
+  
 
   --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.3);
 
   --hero-height-mobile: 280px;
-  --hero-height-tablet: 368px;
+  --hero-height-tablet: 421px;
 
   --font-size-xxs: 10px;
   --font-size-xs: 12px;

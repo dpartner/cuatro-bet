@@ -1,3 +1,5 @@
+import { handleFormSubmit } from './form-submit.js';
+
 export function initFormValidation() {
   const form = document.querySelector('#register-form');
 
@@ -82,6 +84,8 @@ export function initFormValidation() {
 
     if (!isFormValid) {
       event.preventDefault();
+    } else {
+      handleFormSubmit(event);
     }
   });
 }

@@ -38,10 +38,16 @@ export function initBonusModal() {
           </footer>
         </div>
         <div class="modal__boxes-bg-wrapper">
-          <img src="/images/modal/modal-boxes-bg.webp" alt="Modal background" class="modal__boxes-bg" />
+        <picture>
+            <source srcset="/images/modal/modal-boxes-tab-bg.webp" media="(min-width: 768px)" >
+            <img src="/images/modal/modal-boxes-mob-bg.webp" alt="Modal background" class="modal__boxes-bg" />
+        </picture>
         </div>
         <div class="modal__background-wrapper">
-        <img src="/images/modal/modal-bg.png" alt="Modal background" class="modal__background" />
+        <picture>
+            <source srcset="/images/modal/modal-tab-bg.png" media="(min-width: 768px)">
+            <img src="/images/modal/modal-mob-bg.png" alt="Modal background" class="modal__background" />
+        </picture>
         </div>
       </div>
     </div>
@@ -66,6 +72,7 @@ export function initBonusModal() {
     const badge = mainCard.querySelector('.bonus-card__badge');
     const topText = mainCard.querySelector('.bonus-card__top');
     const bodyText = mainCard.querySelector('.bonus-card__text');
+    const bonusInput = document.getElementById('selected-bonus-input');
 
     if (iconImg) {
       iconImg.src = bonus.icon;
@@ -79,6 +86,10 @@ export function initBonusModal() {
 
     if (bodyText) {
       bodyText.innerHTML = bonus.text;
+    }
+
+    if (bonusInput) {
+      bonusInput.value = bonusId;
     }
   };
 

@@ -32,6 +32,11 @@
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   max-height: 90vh;
   background: rgba(19, 19, 28, 1);
+  display: flex;
+  @media screen and (min-width: 768px) {
+    min-height: 60%;
+    padding: 60px 20px 30px;
+  }
 }
 
 .modal.is-open .modal__container {
@@ -41,6 +46,10 @@
 .modal__content {
   position: relative;
   z-index: 12;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 100%;
 }
 
 .modal__background-wrapper {
@@ -76,11 +85,13 @@
   margin: 0;
 }
 
-
-
 .modal__header {
   margin-bottom: var(--space-md);
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 22px;
+  }
 }
 
 .modal__close {
@@ -94,6 +105,9 @@
   cursor: pointer;
   padding: 5px;
   line-height: 1;
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+  }
 }
 
 .modal__title {
@@ -105,6 +119,9 @@
   line-height: 1.1;
   max-width: 80%;
   margin-bottom: var(--space-xs);
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+  }
 }
 
 .modal__subtitle {
@@ -124,10 +141,10 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 12px;
-  background: #1F2447;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: var(--field-background);
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -150,19 +167,20 @@
 .bonus-option__content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .bonus-option__title {
-  font-size: 13px;
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
-  margin: 0;
 }
 
 .bonus-option__text {
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   line-height: 1.3;
-  margin: 0;
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 .bonus-option__text strong {
@@ -204,6 +222,9 @@
 
 .modal__footer {
   text-align: center;
+  @media screen and (min-width: 768px) {
+    margin-top: auto;
+  }
 }
 
 .modal__submit {
@@ -217,7 +238,17 @@
   cursor: pointer;
   padding: var(--space-sm);
   margin-bottom: var(--space-sm);
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    padding: 24px 0;
+  }
 }
+
+.modal__submit:hover {
+  filter: brightness(1.08);
+}
+
 
 .modal__disclaimer {
   font-size: var(--font-size-xs);
@@ -226,6 +257,9 @@
   line-height: 1.6;
   margin: 0;
   text-align: left;
+  @media screen and (min-width: 768px) {
+    text-align: center;
+  }
 }
 
 .modal__disclaimer strong {
