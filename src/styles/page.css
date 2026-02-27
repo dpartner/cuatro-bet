@@ -393,6 +393,10 @@
   }
 }
 
+.field input::placeholder {
+  color: var(--color-text);
+}
+
 .field__icon {
   position: absolute;
   top: 50%;
