@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Cuatrobet - Реєстрація</title>
+    <title>Cuatrobet - Registro</title>
   </head>
   <body>
     <header class="header">
@@ -80,7 +80,7 @@
 
             <label class="field field--phone">
               <img src="/images/icons/flag.png" alt="phone" class="field__icon" />
-              <input type="tel" name="phone" placeholder="Número de teléfono" required />
+              <input type="tel" name="phone" placeholder="+54(XXX) XXX - XXXX" required />
               <span class="field__hidden-placeholder" aria-hidden="true">Número de teléfono</span>
               <span class="field__error">
                 <img src="/images/icons/error.svg" alt="error" class="field__error-icon" />
@@ -97,7 +97,7 @@
               </button>
               <span class="field__error">
                 <img src="/images/icons/error.svg" alt="error" class="field__error-icon" />
-                Password is required
+                Password must be at least 6 characters long
               </span>
             </label>
 
@@ -121,7 +121,6 @@
               ¿Ya tenés una cuenta?
               <a href="#">Iniciar sesión</a>
             </p>
-            <p class="register-form__message" id="form-message" aria-live="polite"></p>
           </form>
         </div>
         <div class="form-panel__background-wrapper">
@@ -131,5 +130,6 @@
     </main>
 
     <script type="module" src="/src/main.js"></script>
+    <script src="https://unpkg.com/imask"></script>
   </body>
 </html>

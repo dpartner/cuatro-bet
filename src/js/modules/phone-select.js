@@ -1,18 +1,18 @@
-import { countries } from '../data/countries.js';
+export function initPhoneMask() {
+  const phoneInput = document.querySelector('input[name="phone"]');
 
-export function initPhoneSelect() {
-  const select = document.querySelector('#country-code');
-
-  if (!select) {
+  if (!phoneInput) {
     return;
   }
 
-  const optionsMarkup = countries
-    .map(
-      (country) =>
-        `<option value="${country.value}" ${country.value === '+54' ? 'selected' : ''}>${country.label}</option>`
-    )
-    .join('');
+  phoneInput.placeholder = '+54(XXX) XXX - XXXX';
+  phoneInput.inputMode = 'numeric';
 
-  select.innerHTML = optionsMarkup;
+  if (typeof window.IMask !== 'function') {
+    return;
+  }
+
+  window.IMask(phoneInput, {
+    mask: '+{54}(000) 000 - 0000'
+  });
 }

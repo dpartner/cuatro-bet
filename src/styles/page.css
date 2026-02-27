@@ -242,6 +242,11 @@
   position: relative;
 }
 
+.field.field--invalid {
+  border-color: var(--color-danger);
+  margin-bottom: 18px;
+}
+
 .field:focus-within, .field:focus, .field:hover {
   border-color: var(--color-primary);
 }
@@ -305,6 +310,16 @@
   color: var(--color-danger);
   font-size: var(--font-size-xxs);
   font-weight: var(--font-weight-normal);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+
+.field__error.shown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .field__error-icon {
@@ -451,17 +466,5 @@
   text-decoration: underline;
   text-underline-offset: 1px;
   text-decoration-thickness: 0.5px;
-}
-
-.register-form__message {
-  min-height: 22px;
-  margin: var(--space-sm) 0 0;
-  color: var(--color-success);
-  font-size: 15px;
-  text-align: center;
-}
-
-.register-form__message--error {
-  color: var(--color-danger);
 }
 
