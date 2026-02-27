@@ -5,9 +5,6 @@ export function initPhoneMask() {
     return;
   }
 
-  phoneInput.placeholder = '+54(XXX) XXX - XXXX';
-  phoneInput.inputMode = 'numeric';
-
   if (typeof window.IMask !== 'function') {
     return;
   }
