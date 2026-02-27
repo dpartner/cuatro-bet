@@ -30,12 +30,13 @@ export function initFormValidation() {
   };
 
   const setAgeErrorVisibility = (isValid) => {
+    const check = form.querySelector('.check');
     const ageError = form.querySelector('.check .field__error');
 
     if (!ageError) {
       return;
     }
-
+    check.classList.toggle('check--invalid', !isValid);
     ageError.classList.toggle('shown', !isValid);
   };
 

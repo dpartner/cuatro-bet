@@ -345,6 +345,11 @@
   align-items: center;
   gap: var(--space-md);
   margin-bottom: var(--space-sm);
+  transition: margin-bottom 0.2s ease;
+}
+
+.check.check--invalid {
+  margin-bottom: 18px;
 }
 
 .check input {
