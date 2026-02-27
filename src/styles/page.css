@@ -12,12 +12,13 @@
   }
   /* background: linear-gradient(180deg, #0f1638 0%, #131733 100%); */
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1366px) {
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     display: flex;
     flex-direction: row;
+    padding: 0;
   }
 }
 
@@ -68,6 +69,10 @@
   padding: var(--space-md) 15px;
   z-index: 2;
   width: 100%;
+  @media screen and (min-width: 1366px) {
+    padding: 20px 54px 0 44px;
+    align-items: flex-start;
+  }
 }
 
 .brand__logo {
@@ -106,9 +111,12 @@
   margin-top: 100px;
 
   @media screen and (min-width: 768px) {
-    margin-top: 211px;
     max-width: 85%;
-    margin-top: 140px;
+    margin-top: 150px;
+  }
+  @media screen and (min-width: 1366px) {
+    margin-top: 440px;
+
   }
 }
 
@@ -124,6 +132,10 @@
     font-size: 50px;
     line-height: 40px;
   }
+  @media screen and (min-width: 1366px) {
+    font-size: 64px;
+    line-height: 50px;
+  }
 }
 
 .hero__kicker {
@@ -135,6 +147,11 @@
     font-size: 62px;
     padding-left: 60px;
     margin-bottom: var(--space-lg);
+  }
+  @media screen and (min-width: 1366px) {
+    font-size: 80px;
+    padding-left: 50px;
+    margin-bottom: 35px;
   }
 }
 
@@ -151,6 +168,10 @@
 
   @media screen and (min-width: 768px) {
     padding: 32px 36px 40px;
+  }
+  @media screen and (min-width: 1366px) {
+    max-width: 534px;
+    padding: 70px 54px;
   }
 }
 
@@ -173,6 +194,9 @@
     align-items: center;
     margin-bottom: 22px;
   }
+  @media screen and (min-width: 1366px) {
+    margin-bottom: 20px;
+  }
 }
 
 .form__content-header h2 {
@@ -181,6 +205,10 @@
   text-transform: uppercase;
   @media screen and (min-width: 768px) {
     font-size: 22px;
+  }
+  @media screen and (min-width: 1366px) {
+    font-size: 24px;
+    max-width: 80%;
   }
 }
 
@@ -213,11 +241,21 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  @media screen and (min-width: 1366px) {
+    top: 0;
+    left: -50px;
+    bottom: 0;
+  }
 }
 .form-panel__background {
   display: block;
   width: 100%;
-  object-fit: cover;
+  @media screen and (max-width: 1365px) {
+    object-fit: cover;
+  }
+  @media screen and (min-width: 1366px) {
+    height: 100%;
+  }
 }
 
 .form-panel__title {
@@ -448,6 +486,9 @@
   @media screen and (min-width: 768px) {
     margin-bottom: 22px;
   }
+  @media screen and (min-width: 1366px) {
+    margin-bottom: 20px;
+  }
 }
 
 .check.check--invalid {
@@ -512,6 +553,10 @@
     font-size: var(--font-size-sm);
     flex-direction: row;
     gap: var(--space-xxs);
+  }
+  @media screen and (min-width: 1366px) {
+    flex-direction: column;
+    gap: 0;
   }
 }
 

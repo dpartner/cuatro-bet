@@ -39,13 +39,14 @@ export function initBonusModal() {
         </div>
         <div class="modal__boxes-bg-wrapper">
         <picture>
-            <source srcset="/images/modal/modal-boxes-tab-bg.webp" media="(min-width: 768px)" >
+            <source srcset="/images/modal/modal-boxes-tab-bg.webp" media="(min-width: 768px) and (max-width: 1365px)">
             <img src="/images/modal/modal-boxes-mob-bg.webp" alt="Modal background" class="modal__boxes-bg" />
         </picture>
         </div>
         <div class="modal__background-wrapper">
         <picture>
-            <source srcset="/images/modal/modal-tab-bg.png" media="(min-width: 768px)">
+            <source srcset="/images/modal/modal-tab-bg.png" media="(min-width: 768px) and (max-width: 1365px)">
+            <source srcset="/images/modal/modal-desk-bg.png" media="(min-width: 1366px)">
             <img src="/images/modal/modal-mob-bg.png" alt="Modal background" class="modal__background" />
         </picture>
         </div>
