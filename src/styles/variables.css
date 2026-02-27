@@ -12,13 +12,15 @@
   --color-border: rgba(255, 255, 255, 0.08);
   --color-focus: #ffb784;
   --color-success: #29c772;
-  --color-danger: #ff6565;
+  --color-danger: #EF4444;
 
+  --radius-xxs: 4px;
   --radius-xs: 8px;
   --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 22px;
 
+  --space-xxs: 4px;
   --space-xs: 8px;
   --space-sm: 12px;
   --space-md: 16px;

@@ -112,7 +112,7 @@
   color: var(--color-text);
   font-size: 34px;
   padding-left: 28px;
-  margin-bottom: 4px;
+  margin-bottom: var(--space-xxs);
 }
 
 .hero__title {
@@ -196,8 +196,8 @@
 
 .bonus-card__badge {
   display: inline-block;
-  padding: 2px 4px;
-  border-radius: 4px;
+  padding: 2px var(--space-xxs);
+  border-radius: var(--radius-xxs);
   background: var(--color-primary);
   color: var(--color-text);
   font-size: var(--font-size-xs);
@@ -234,7 +234,7 @@
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease margin-bottom 0.2s ease;
   outline: 0;
   outline-offset: 0;
   outline-style: none;
@@ -294,17 +294,23 @@
   transform: translateY(-170%);
 }
 
-.field__prefix {
-  display: grid;
+.field__error {
+  position: absolute;
+  bottom: calc(var(--space-md) * -1);
+  left: var(--space-md);
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  align-self: stretch;
-  min-width: 72px;
-  border-right: 1px solid var(--color-border);
+  gap: var(--space-xxs);
+  color: var(--color-danger);
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-normal);
 }
 
-.field__prefix select {
-  padding-right: 6px;
-  cursor: pointer;
+.field__error-icon {
+  width: 12px;
+  height: 12px;
+  object-fit: cover;
 }
 
 .field__toggle {
@@ -316,10 +322,6 @@
 
 .field__eye {
   color: #9ea4c8;
-}
-
-.field--invalid {
-  border-color: var(--color-danger);
 }
 
 .check {
@@ -367,7 +369,7 @@
 }
 
 .check input:focus-visible + .check__box {
-  outline: 2px solid var(--color-focus);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
@@ -378,6 +380,7 @@
   line-height: 1.4;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .check__text strong {
@@ -391,6 +394,10 @@
   text-decoration-thickness: 0.5px;
 }
 
+.check__text .field__error {
+  bottom: calc(var(--space-sm) * -1);
+  left: 0;
+}
 .register-form__submit {
   width: 100%;
   border: 0;
