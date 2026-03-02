@@ -10,6 +10,8 @@ export function initPhoneMask() {
   }
 
   window.IMask(phoneInput, {
-    mask: '+{54}(000) 000 - 0000'
+    mask: '+{54}(000) 000 - 0000',
+    lazy: true,
+    placeholderChar: 'X'
   });
 }
