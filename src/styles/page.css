@@ -123,7 +123,7 @@
   position: absolute;
   z-index: 1;
   /* margin-top: 100px; */
-  top: 65%;
+  top: 55%;
   left: var(--space-md);
   transform: translate(0, -50%);
   display: flex;
@@ -134,14 +134,14 @@
 
   @media screen and (min-width: 768px) {
     max-width: 85%;
-    top: 58%;
+    top: 48%;
     left: 36px;
-    gap: 14px;
+    gap: 12px;
   }
   @media screen and (min-width: 1366px) {
     top: 78%;
     left: 54px;
-    gap: 28px;
+    gap: 18px;
   }
   @media screen and (min-width: 1920px) {
     top: 75%;
@@ -153,40 +153,37 @@
 .hero__title {
   font-family: var(--font-family-display);
   font-weight: var(--font-weight-bold);
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1;
   text-transform: uppercase;
 
   @media screen and (min-width: 768px) {
-    font-size: 44px;
-    line-height: 40px;
+    font-size: 37px;
   }
   @media screen and (min-width: 1366px) {
-    font-size: 64px;
-    line-height: 50px;
+    font-size: 50px;
   }
   @media screen and (min-width: 1920px) {
-    font-size: 120px;
-    line-height: 94px;
+    font-size: 100px;
   }
 }
 
 .hero__kicker {
   color: var(--color-text);
-  font-size: 30px;
-  padding: 15px 11px;
+  font-size: 20px;
+  padding: 10px 12px;
   position: relative;
   @media screen and (min-width: 768px) {
-    font-size: 53px;
-    padding: 28px 20px;
+    font-size: 37px;
+    padding: 17px 21px;
   }
   @media screen and (min-width: 1366px) {
-    font-size: 78px;
-    padding: 42px 29px;
+    font-size: 50px;
+    padding: 23px 29px;
   }
   @media screen and (min-width: 1920px) {
-    font-size: 150px;
-    padding: 82px 54px;
+    font-size: 100px;
+    padding: 50px 64px;
   }
 }
 .hero__kicker-text {
