@@ -123,18 +123,25 @@
   position: absolute;
   z-index: 1;
   /* margin-top: 100px; */
-  top: 60%;
+  top: 65%;
   left: var(--space-md);
   transform: translate(0, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4px;
 
   @media screen and (min-width: 768px) {
     max-width: 85%;
-    top: 50%;
+    top: 58%;
     left: 36px;
+    gap: 14px;
   }
   @media screen and (min-width: 1366px) {
-    top: 60%;
+    top: 78%;
     left: 54px;
+    gap: 28px;
   }
   @media screen and (min-width: 1920px) {
     top: 75%;
@@ -147,11 +154,11 @@
   font-family: var(--font-family-display);
   font-weight: var(--font-weight-bold);
   font-size: 24px;
-  line-height: 30px;
+  line-height: 1;
   text-transform: uppercase;
 
   @media screen and (min-width: 768px) {
-    font-size: 50px;
+    font-size: 44px;
     line-height: 40px;
   }
   @media screen and (min-width: 1366px) {
@@ -166,27 +173,46 @@
 
 .hero__kicker {
   color: var(--color-text);
-  font-size: 34px;
-  padding-left: 28px;
-  margin-bottom: var(--space-xxs);
+  font-size: 30px;
+  padding: 15px 11px;
+  position: relative;
   @media screen and (min-width: 768px) {
-    font-size: 62px;
-    padding-left: 60px;
-    margin-bottom: var(--space-lg);
+    font-size: 53px;
+    padding: 28px 20px;
   }
   @media screen and (min-width: 1366px) {
-    font-size: 80px;
-    padding-left: 50px;
-    margin-bottom: 35px;
+    font-size: 78px;
+    padding: 42px 29px;
   }
   @media screen and (min-width: 1920px) {
     font-size: 150px;
-    padding-left: 80px;
+    padding: 82px 54px;
+  }
+}
+.hero__kicker-text {
+  position: relative;
+  z-index: 2;
+}
+.hero__kicker-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1366px) {
+  }
+  @media screen and (min-width: 1920px) {
   }
 }
 
 .hero__title {
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 .form-panel {

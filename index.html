@@ -17,7 +17,15 @@
       <section class="hero" aria-label="Welcome bonus">
 
         <div class="hero__content">
-          <p class="hero__kicker">BONO</p>
+          <span class="hero__kicker">
+            <span class="hero__kicker-text">BONO</span>
+            <picture>
+              <source srcset="/images/hero/text-bg-mob.png" media="(max-width: 767px)">
+              <source srcset="/images/hero/text-bg-tab.png" media="(min-width: 768px) and (max-width: 1365px)">
+              <source srcset="/images/hero/text-bg-desk.png" media="(min-width: 1366px)">
+              <img src="/images/hero/text-bg-mob.png" alt="Bono" class="hero__kicker-bg" />
+            </picture>
+          </span>
           <h1 class="hero__title">DE BIENVENIDA</h1>
         </div>
       </section>
@@ -121,7 +129,7 @@
                 </clipPath>
                 </defs>
               </svg>
-              </button>
+            </button>
             <p class="register-form__signin">
               ¿Ya tenés una cuenta?
               <a href="#">Iniciar sesión</a>
