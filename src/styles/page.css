@@ -190,14 +190,14 @@
 }
 
 .form-panel {
-  padding: 0 15px;
+  padding: 10px 15px 0;
   display: flex;
   flex-direction: column;
   position: relative;
   flex-grow: 1;
 
   @media screen and (min-width: 768px) {
-    padding: 32px 36px 40px;
+    padding: 0 36px 40px;
   }
   @media screen and (min-width: 1366px) {
     max-width: 534px;
@@ -267,7 +267,7 @@
 
 .form-panel__background-wrapper {
   position: absolute;
-  top: -20px;
+  top: -14px;
   left: 0;
   right: 0;
   width: 100%;
@@ -275,6 +275,9 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  @media screen and (min-width: 768px) {
+    top: -60px;
+  }
   @media screen and (min-width: 1366px) {
     top: 0;
     left: -50px;
@@ -307,7 +310,7 @@
   border: 2px solid var(--color-primary);
   border-radius: var(--radius-sm);
   background: var(--field-background);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 14px;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
@@ -383,7 +386,7 @@
 .field {
   display: flex;
   margin-bottom: var(--space-xs);
-  padding: 15px var(--space-md) 15px 44px;
+  padding: 19px var(--space-md) 15px 44px;
   border-radius: var(--radius-sm);
   background: var(--field-background);
   border-width: 1px;
@@ -396,7 +399,7 @@
   outline-width: 0;
   position: relative;
   @media screen and (min-width: 768px) {
-    padding: 23px var(--space-md) 23px 52px;
+    padding: 26px var(--space-md) 23px 52px;
     margin-bottom: 14px;
   }
 }
@@ -407,7 +410,7 @@
 }
 
 .field.field--password {
-  margin-bottom: var(--space-sm);
+  margin-bottom: 14px;
 } 
 
 .field.field--invalid {
@@ -506,6 +509,10 @@
 }
 
 .field__toggle {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
   border: 0;
   background: transparent;
   cursor: pointer;
