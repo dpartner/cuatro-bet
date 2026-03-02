@@ -141,6 +141,15 @@
   }
 }
 
+.modal__close:hover,
+.modal__close:focus-visible {
+  color: var(--color-primary);
+}
+
+.modal__close:active {
+  color: var(--color-primary-muted);
+}
+
 .modal__title {
   font-family: var(--font-family-display);
   font-size: var(--font-size-lg);
@@ -288,8 +297,13 @@
   }
 }
 
-.modal__submit:hover {
-  filter: brightness(1.08);
+.modal__submit:hover,
+.modal__submit:focus-visible {
+  color: var(--color-primary-muted);
+}
+
+.modal__submit:active {
+  color: var(--color-primary-muted);
 }
 
 
