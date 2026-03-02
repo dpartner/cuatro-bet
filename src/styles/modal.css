@@ -224,13 +224,25 @@
   transition: all 0.2s ease;
 }
 
-.bonus-option:hover .bonus-option__radio {
+.bonus-option:hover .bonus-option__radio,
+.bonus-option:focus-visible .bonus-option__radio {
   border-color: var(--color-primary);
+}
+
+.bonus-option:active .bonus-option__radio {
+  border-color: var(--color-primary-muted);
 }
 
 .bonus-option.is-selected .bonus-option__radio {
   background: var(--color-primary);
   border-color: var(--color-primary);
+}
+
+.bonus-option.is-selected:hover .bonus-option__radio,
+.bonus-option.is-selected:focus-visible .bonus-option__radio,
+.bonus-option.is-selected:active .bonus-option__radio {
+  border-color: var(--color-primary-muted);
+  background: var(--color-primary-muted);
 }
 
 .bonus-option__radio::after {
