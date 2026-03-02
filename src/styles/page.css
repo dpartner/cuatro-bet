@@ -389,10 +389,6 @@
   }
 }
 
-.field.field--invalid {
-  border-color: var(--color-danger);
-  margin-bottom: 18px;
-}
 
 .field:focus-within, .field:focus, .field:hover {
   border-color: var(--color-primary);
@@ -401,6 +397,11 @@
 .field.field--password {
   margin-bottom: var(--space-sm);
 } 
+
+.field.field--invalid {
+  border-color: var(--color-danger);
+  margin-bottom: 22px;
+}
 
 .field input {
   width: 100%;
@@ -465,7 +466,7 @@
 
 .field__error {
   position: absolute;
-  bottom: calc(var(--space-md) * -1);
+  bottom: -18px;
   left: var(--space-md);
   display: flex;
   flex-direction: row;
@@ -598,7 +599,7 @@
 }
 
 .check__text .field__error {
-  bottom: calc(var(--space-sm) * -1);
+  bottom: calc(var(--space-md) * -1);
   left: 0;
 }
 .register-form__submit {

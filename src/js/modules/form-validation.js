@@ -40,27 +40,31 @@ export function initFormValidation() {
     ageError.classList.toggle('shown', !isValid);
   };
 
-  const validateInput = (input) => {
-    let isValid = false;
-
-    if (input === email) {
-      isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
-    }
-
-    if (input === phone) {
-      isValid = /^\+54\(\d{3}\)\s\d{3}\s-\s\d{4}$/.test(phone.value.trim());
-    }
-
-    if (input === password) {
-      isValid = password.value.trim().length >= 6;
-    }
-
-    setErrorVisibility(input, isValid);
-    return isValid;
-  };
-
   const validateForm = () => {
-    const fieldValidity = fieldInputs.map((input) => validateInput(input));
+    const fieldValidity = fieldInputs.map((input) => {
+      let isValid = false;
+
+      if (input === email) {
+        isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      }
+
+      if (input === phone) {
+        // Check if phone matches the mask pattern: +54(XXX) XXX - XXXX
+        // The regex needs to match the specific format including spaces and parentheses
+        // Note: The value from input might contain the mask characters depending on IMask settings,
+        // but usually we validate the value.
+        // Let's use a regex that matches the visible mask format.
+        isValid = /^\+54\(\d{3}\)\s\d{3}\s-\s\d{4}$/.test(phone.value.trim());
+      }
+
+      if (input === password) {
+        isValid = password.value.trim().length >= 8; // Updated to match HTML minlength=8
+      }
+
+      setErrorVisibility(input, isValid);
+      return isValid;
+    });
+
     const areFieldsValid = fieldValidity.every(Boolean);
     const isAgeValid = isAdult.checked;
 
@@ -68,16 +72,6 @@ export function initFormValidation() {
 
     return areFieldsValid && isAgeValid;
   };
-
-  fieldInputs.forEach((input) => {
-    input.addEventListener('input', () => {
-      validateInput(input);
-    });
-  });
-
-  isAdult.addEventListener('change', () => {
-    setAgeErrorVisibility(isAdult.checked);
-  });
 
   form.addEventListener('submit', (event) => {
     const isFormValid = validateForm();
