@@ -29,13 +29,15 @@
   position: relative;
   width: 100%;
   border-radius: 20px 20px 0 0;
-  padding: 24px 20px 30px;
+  padding: 24px var(--space-sm) 30px;
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   background: rgba(19, 19, 28, 1);
   display: flex;
+  min-height: 80%;
+
   @media screen and (min-width: 768px) {
     min-height: 60%;
-    padding: 60px 20px 30px;
+    padding: 60px 40px 30px;
   }
   @media screen and (max-width: 1365px) {
     max-height: 90vh;
@@ -314,9 +316,9 @@
   line-height: 1.6;
   margin: 0;
   text-align: left;
+  margin-top: auto;
   @media screen and (min-width: 768px) {
     text-align: center;
-    margin-top: auto;
   }
 }
 
