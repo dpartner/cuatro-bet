@@ -1,4 +1,5 @@
 import { handleFormSubmit } from './form-submit.js';
+import { PHONE_REGEX } from '../constants.js';
 
 export function initFormValidation() {
   const form = document.querySelector('#register-form');
@@ -49,12 +50,8 @@ export function initFormValidation() {
       }
 
       if (input === phone) {
-        // Check if phone matches the mask pattern: +54(XXX) XXX - XXXX
-        // The regex needs to match the specific format including spaces and parentheses
-        // Note: The value from input might contain the mask characters depending on IMask settings,
-        // but usually we validate the value.
-        // Let's use a regex that matches the visible mask format.
-        isValid = /^\+54\(\d{3}\)\s\d{3}\s-\s\d{4}$/.test(phone.value.trim());
+        // Check if phone matches the mask pattern defined in constants.js
+        isValid = PHONE_REGEX.test(phone.value.trim());
       }
 
       if (input === password) {
