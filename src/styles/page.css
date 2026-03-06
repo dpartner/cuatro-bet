@@ -409,6 +409,58 @@
   border-color: var(--color-primary);
 }
 
+.field.field--phone {
+  position: relative;
+}
+
+.field.field--phone input {
+  color: transparent;
+  caret-color: #fff;
+  z-index: 2;
+}
+
+.phone-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 19px var(--space-md) 15px 44px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  z-index: 1;
+  white-space: pre;
+  
+  @media screen and (min-width: 768px) {
+    padding: 26px var(--space-md) 23px 52px;
+  }
+}
+
+.phone-mask span {
+  transition: color 0.2s ease;
+}
+
+.mask-white {
+  color: var(--color-text);
+}
+
+.mask-muted {
+  color: var(--color-text-muted);
+}
+
+/* When field is NOT focused, everything should be white (placeholder style) */
+.field:not(:focus-within) .mask-muted {
+  color: var(--color-text);
+}
+
+/* But if it is INVALID and NOT focused, placeholders should be red */
+.field.field--invalid:not(:focus-within) .mask-muted {
+  color: var(--color-danger);
+}
+
 .field.field--phone,
 .field.field--password {
   padding-top: 17px;
