@@ -41,26 +41,40 @@ export function initFormValidation() {
     ageError.classList.toggle('shown', !isValid);
   };
 
+  const updatePasswordRequirement = () => {
+    const isValid = password.value.trim().length >= 6;
+    const field = password.closest('.field');
+    const reqElement = field?.querySelector('.password-requirements');
+    
+    if (reqElement) {
+      reqElement.classList.toggle('valid', isValid);
+    }
+  };
+
+  password.addEventListener('input', updatePasswordRequirement);
+
+  const validateInput = (input) => {
+    let isValid = false;
+
+    if (input === email) {
+      isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+    }
+
+    if (input === phone) {
+      // Check if phone matches the mask pattern defined in constants.js
+      isValid = PHONE_REGEX.test(phone.value.trim());
+    }
+
+    if (input === password) {
+      isValid = password.value.trim().length >= 6; // Updated to match HTML minlength=6
+    }
+
+    setErrorVisibility(input, isValid);
+    return isValid;
+  };
+
   const validateForm = () => {
-    const fieldValidity = fieldInputs.map((input) => {
-      let isValid = false;
-
-      if (input === email) {
-        isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
-      }
-
-      if (input === phone) {
-        // Check if phone matches the mask pattern defined in constants.js
-        isValid = PHONE_REGEX.test(phone.value.trim());
-      }
-
-      if (input === password) {
-        isValid = password.value.trim().length >= 8; // Updated to match HTML minlength=8
-      }
-
-      setErrorVisibility(input, isValid);
-      return isValid;
-    });
+    const fieldValidity = fieldInputs.map((input) => validateInput(input));
 
     const areFieldsValid = fieldValidity.every(Boolean);
     const isAgeValid = isAdult.checked;
@@ -69,6 +83,19 @@ export function initFormValidation() {
 
     return areFieldsValid && isAgeValid;
   };
+
+  fieldInputs.forEach((input) => {
+    input.addEventListener('blur', () => {
+      validateInput(input);
+    });
+
+    input.addEventListener('input', () => {
+      // If field is already invalid, re-validate on input to clear error immediately
+      if (input.closest('.field').classList.contains('field--invalid')) {
+        validateInput(input);
+      }
+    });
+  });
 
   form.addEventListener('submit', (event) => {
     const isFormValid = validateForm();
