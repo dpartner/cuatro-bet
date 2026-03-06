@@ -435,6 +435,58 @@
   border-color: var(--color-primary);
 }
 
+.field.field--phone {
+  position: relative;
+}
+
+.field.field--phone input {
+  color: transparent;
+  caret-color: #fff;
+  z-index: 2;
+}
+
+.phone-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 19px var(--space-md) 15px 44px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  z-index: 1;
+  white-space: pre;
+  
+  @media screen and (min-width: 768px) {
+    padding: 26px var(--space-md) 23px 52px;
+  }
+}
+
+.phone-mask span {
+  transition: color 0.2s ease;
+}
+
+.mask-white {
+  color: var(--color-text);
+}
+
+.mask-muted {
+  color: var(--color-text-muted);
+}
+
+/* When field is NOT focused, everything should be white (placeholder style) */
+.field:not(:focus-within) .mask-muted {
+  color: var(--color-text);
+}
+
+/* But if it is INVALID and NOT focused, placeholders should be red */
+.field.field--invalid:not(:focus-within) .mask-muted {
+  color: var(--color-danger);
+}
+
 .field.field--phone,
 .field.field--password {
   padding-top: 17px;
@@ -447,7 +499,7 @@
 }
 
 .field.field--password {
-  margin-bottom: 14px;
+  margin-bottom: 32px;
 } 
 
 .field.field--invalid {
@@ -521,6 +573,57 @@
   transform: translateY(-170%);
 }
 
+.field__clear {
+  position: absolute;
+  right: 23px;
+  top: 55%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-icon);
+  display: none;
+  padding: 0;
+  z-index: 3;
+}
+
+.field:not(.field--phone):not(.field--password) input:not(:placeholder-shown) ~ .field__clear {
+  display: block;
+}
+
+.field.field--password input:not(:placeholder-shown) ~ .field__clear {
+  display: block;
+}
+
+.field.field--phone .field__clear.is-visible {
+  display: block;
+}
+
+.field.field--invalid .field__clear {
+  color: var(--color-danger);
+}
+
+.field.field--password .field__clear {
+  right: 70px;
+}
+
+.field input {
+  padding-right: 24px;
+}
+
+.field.field--password input {
+  padding-right: 50px;
+}
+
+
+.field input {
+  padding-right: 24px; 
+}
+
+.field.field--password input {
+  padding-right: 85px;
+}
+
 .field__error {
   position: absolute;
   bottom: -18px;
@@ -538,10 +641,63 @@
   transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
 }
 
+
 .field__error.shown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+.password-requirements {
+  position: absolute;
+  bottom: -18px;
+  left: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text);
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-normal);
+  transition: color 0.2s ease;
+}
+
+.requirement-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-text-muted);
+  display: inline-block;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.password-requirements.valid .requirement-icon {
+  background-color: transparent;
+  width: 12px;
+  height: 12px;
+}
+
+.password-requirements.valid .requirement-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L4.5 7.5L11 1' stroke='%23FF5900' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+}
+
+/* Invalid state when field is invalid (e.g. on blur/submit) */
+.field.field--invalid .password-requirements:not(.valid) {
+  color: var(--color-danger);
+}
+
+.field.field--invalid .password-requirements:not(.valid) .requirement-icon {
+  background-color: var(--color-danger);
 }
 
 .field__error-icon {
@@ -552,7 +708,7 @@
 
 .field__toggle {
   position: absolute;
-  top: 50%;
+  top: 55%;
   right: 20px;
   transform: translateY(-50%);
   border: 0;
