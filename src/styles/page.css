@@ -547,6 +547,57 @@
   transform: translateY(-170%);
 }
 
+.field__clear {
+  position: absolute;
+  right: 23px;
+  top: 55%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-icon);
+  display: none;
+  padding: 0;
+  z-index: 3;
+}
+
+.field:not(.field--phone):not(.field--password) input:not(:placeholder-shown) ~ .field__clear {
+  display: block;
+}
+
+.field.field--password input:not(:placeholder-shown) ~ .field__clear {
+  display: block;
+}
+
+.field.field--phone .field__clear.is-visible {
+  display: block;
+}
+
+.field.field--invalid .field__clear {
+  color: var(--color-danger);
+}
+
+.field.field--password .field__clear {
+  right: 70px;
+}
+
+.field input {
+  padding-right: 24px;
+}
+
+.field.field--password input {
+  padding-right: 50px;
+}
+
+
+.field input {
+  padding-right: 24px; 
+}
+
+.field.field--password input {
+  padding-right: 85px;
+}
+
 .field__error {
   position: absolute;
   bottom: -18px;
@@ -563,6 +614,7 @@
   transform: translateY(-10px);
   transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
 }
+
 
 .field__error.shown {
   opacity: 1;
@@ -630,7 +682,7 @@
 
 .field__toggle {
   position: absolute;
-  top: 50%;
+  top: 55%;
   right: 20px;
   transform: translateY(-50%);
   border: 0;

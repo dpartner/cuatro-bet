@@ -1,5 +1,5 @@
 import { handleFormSubmit } from './form-submit.js';
-import { PHONE_REGEX } from '../constants.js';
+import { PHONE_REGEX, PHONE_PREFIX } from '../constants.js';
 
 export function initFormValidation() {
   const form = document.querySelector('#register-form');
@@ -14,6 +14,51 @@ export function initFormValidation() {
   const isAdult = form.elements.isAdult;
 
   const fieldInputs = [email, phone, password];
+
+  // Logic for Clear Buttons
+  const initClearButtons = () => {
+    const clearButtons = form.querySelectorAll('.field__clear');
+    
+    clearButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent focus loss if possible, or handle re-focus
+        const field = btn.closest('.field');
+        const input = field.querySelector('input');
+        
+        if (input === phone) {
+          input.value = ''; 
+        } else {
+          input.value = '';
+        }
+        
+        input.focus();
+        // Dispatch input event to trigger validation updates, mask updates, visibility toggles
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+    });
+  };
+
+  initClearButtons();
+
+  const updatePhoneClearVisibility = () => {
+      const clearBtn = phone.closest('.field').querySelector('.field__clear');
+      if (!clearBtn) return;
+      const val = phone.value;
+      const userPart = val.substring(3); // remove +54
+      const hasUserDigits = /\d/.test(userPart);
+      
+      if (hasUserDigits) {
+          clearBtn.classList.add('is-visible');
+      } else {
+          clearBtn.classList.remove('is-visible');
+      }
+  };
+
+  phone.addEventListener('input', updatePhoneClearVisibility);
+  // Initial check
+  updatePhoneClearVisibility();
+
 
   const setErrorVisibility = (input, isValid) => {
     const field = input.closest('.field');
