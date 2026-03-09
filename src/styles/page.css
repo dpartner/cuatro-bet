@@ -409,30 +409,70 @@
   flex-grow: 1;
 }
 
+/* Add at the top of the file or before .field */
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotation {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: 360deg; }
+}
+
 .field {
   display: flex;
   margin-bottom: var(--space-xs);
   padding: 19px var(--space-md) 15px 44px;
   border-radius: var(--radius-sm);
+  
+  /* Layout & Background */
+  position: relative;
+  isolation: isolate; /* Create stacking context for pseudo-element */
+  border: 1px solid transparent;
   background: var(--field-background);
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  transition: border-color 0.2s ease margin-bottom 0.2s ease;
+  background-clip: border-box; /* Ensure background doesn't cover the border area */
+  
+  transition: border-color 0.2s ease, margin-bottom 0.2s ease;
   outline: 0;
   outline-offset: 0;
   outline-style: none;
   outline-width: 0;
-  position: relative;
+  
   @media screen and (min-width: 768px) {
     padding: 26px var(--space-md) 23px 52px;
     margin-bottom: 14px;
   }
 }
 
+.field::before {
+  content: "";
+  position: absolute;
+  inset: -1px; /* Align with the 1px border */
+  z-index: -1; /* Place behind content */
+  border-radius: inherit;
+  padding: 1px; /* Thickness of the gradient border */
+  background: conic-gradient(from var(--gradient-angle), transparent 0%, var(--color-primary) 50%, transparent 80%);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotation 2.5s linear infinite;
+  pointer-events: none;
+}
 
 .field:focus-within, .field:focus, .field:hover {
   border-color: var(--color-primary);
+}
+
+.field:focus-within::before, .field:focus::before, .field:hover::before {
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .field.field--phone {
